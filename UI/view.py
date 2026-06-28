@@ -25,8 +25,9 @@ class View(ft.UserControl):
         self._page.controls.append(self._title)
 
         self._ddStore = ft.Dropdown(label="Store", width=250)
-        self._txtIntK = ft.TextField(label="K", width=100)
+        self._txtIntK = ft.TextField(label="K", width=100, on_change=self._controller.handleIntK)
         self._ddNode = ft.Dropdown(label="Node", width=150, disabled=True)
+        self._controller.popola_dd(self._ddStore)
 
         row1 = ft.Row([self._ddStore, self._txtIntK, self._ddNode], alignment=ft.MainAxisAlignment.CENTER,
                       vertical_alignment=ft.CrossAxisAlignment.END)
